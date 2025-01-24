@@ -3,7 +3,7 @@
     <h1>{{ counterData.counterTitle }}:</h1>
     <div class="d-flex gap-2 align-items-center align-content-center justify-content-center">
         <button @click="counterDecrement()" class="btn btn-primary">-</button>
-        <span class="fs-1">{{counterData.counter}}</span>
+        <span class="fs-1 px-5 rounded-4 border">{{counterData.counter}} <br> {{ oddOrEven }}</span>
         <button @click="counterIncrement()" class="btn btn-primary">+</button>
     </div>
     <div>
@@ -15,14 +15,29 @@
 
 <script setup>
 import {
+    computed,
     reactive,
+    ref,
+    watch,
 } from 'vue';
+
+
+
 
 const counterData = reactive({
     counter: 0,
     counterTitle: "My counter"
 })
+const oddOrEven = ref("Odd");
+watch(()=> counterData.counter, (newValue) => {
+    if (newValue % 2 === 0) oddOrEven.value = "Even"
+    else oddOrEven.value = "Odd"
+})
 
+// const oddOrEven = computed(() => {
+//     if (counterData.counter % 2 === 0) return "Even"
+//     else return "Odd"
+// })
 const counterIncrement = () => {
    counterData.counter++
 };
