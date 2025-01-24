@@ -8,7 +8,7 @@
     </div>
     <div>
         <h4>Edit Title:</h4>
-        <input class="form-control" v-model="counterData.counterTitle" type="text" placeholder="Edit Title">
+        <input class="form-control" v-model="counterData.counterTitle" type="text" placeholder="Edit Title" v-autofocus>
     </div>
 </div>
 </template>
@@ -21,20 +21,9 @@ const counterData = reactive({
 })
 const oddOrEven = ref("Odd");
 
-onMounted(() => {
-    counterData.counterTitle ="mounted";
-    
-});
-
-onBeforeUnmount(()=>{
-   counterData.counterTitle ="before unmount";
-});
-
-onUpdated(()=>{
-  counterData.counterTitle ="updated";
-    
-});
-
+const vAutofocus = {
+    mounted: el => el.focus()
+} 
 
 
 
