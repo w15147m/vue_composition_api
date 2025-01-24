@@ -14,16 +14,15 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, onUpdated, reactive, ref, watch, } from 'vue';
+import {  reactive, ref, watch, } from 'vue';
+import { vAutofocus } from '@/directives/autoFocus';
 const counterData = reactive({
     counter: 0,
     counterTitle: "My counter"
 })
 const oddOrEven = ref("Odd");
 
-const vAutofocus = {
-    mounted: el => el.focus()
-} 
+
 
 
 

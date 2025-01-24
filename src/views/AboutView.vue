@@ -1,32 +1,18 @@
 <template>
     <div class="text-center">
-        <h1>Composition api Counter App</h1>
-        <div class="d-flex gap-2 align-items-center align-content-center justify-content-center">
-            <button @click="counterDecrement()" class="btn btn-primary">-</button>
-            <span class="fs-1">{{counter}}</span>
-            <button @click="counterIncrement()" class="btn btn-primary">+</button>
-        </div>
+      <div>
+        <h4>{{ counterData.counterTitle }}:</h4>
+        <input class="form-control" v-model="counterData.counterTitle" type="text" placeholder="Edit Title" v-autofocus>
+    </div>
     </div>
     </template>
+    <script setup>
+    import { vAutofocus } from '@/directives/autoFocus';
+   import { reactive } from 'vue';
+    const counterData = reactive({
+    counter: 0,
+    counterTitle: "Input autofocus",
     
-    <script>
-    export default {
-        data() {
-            return {
-                counter: 0,
-    
-            }
-    
-        },
-        methods: {
-          counterIncrement() {
-            this.counter++
-          },
-          counterDecrement() {
-            this.counter--
-          }
-        }
-    
-    }
+})
     </script>
     
