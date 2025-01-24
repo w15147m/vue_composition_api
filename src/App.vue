@@ -9,6 +9,7 @@ import {
   <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/posts">Posts</RouterLink>
         <RouterLink to="/textEditor">Text Editor</RouterLink>
     </nav>
 <RouterView />
