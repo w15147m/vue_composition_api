@@ -14,30 +14,37 @@
 </template>
 
 <script setup>
-import {
-    computed,
-    reactive,
-    ref,
-    watch,
-} from 'vue';
-
-
-
-
+import { onBeforeUnmount, onMounted, onUpdated, reactive, ref, watch, } from 'vue';
 const counterData = reactive({
     counter: 0,
     counterTitle: "My counter"
 })
 const oddOrEven = ref("Odd");
+
+onMounted(() => {
+    counterData.counterTitle ="mounted";
+    
+});
+
+onBeforeUnmount(()=>{
+   counterData.counterTitle ="before unmount";
+});
+
+onUpdated(()=>{
+  counterData.counterTitle ="updated";
+    
+});
+
+
+
+
+
+
 watch(()=> counterData.counter, (newValue) => {
     if (newValue % 2 === 0) oddOrEven.value = "Even"
     else oddOrEven.value = "Odd"
 })
 
-// const oddOrEven = computed(() => {
-//     if (counterData.counter % 2 === 0) return "Even"
-//     else return "Odd"
-// })
 const counterIncrement = () => {
    counterData.counter++
 };
