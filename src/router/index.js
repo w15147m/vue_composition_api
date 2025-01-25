@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import textEditor from '@/views/textEditor.vue'
 import postsView from '@/views/posts/postsView.vue'
 import postDetails from '@/views/posts/postDetails.vue'
+import modalView from '@/views/posts/modalView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/post/details/:id',
       name: 'postDetails',
       component: postDetails
+    },
+    {
+      path: '/modal',
+      name: 'modal',
+      component: modalView
     },
     {
       path: '/textEditor',
