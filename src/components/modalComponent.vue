@@ -1,11 +1,6 @@
 <template>
 <teleport to="body">
-    <div class="modal-overlay" @click.self="hideModal">
-        <div class="text-dark modal-content bg-gradient rounded shadow m-4 p-4">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, ea minus nesciunt sequi dignissimos beatae cumque debitis facilis iure atque ratione soluta impedit optio mollitia laudantium, accusamus fugit.</p>
-            <button @click="hideModal" class="btn btn-primary mt-2">Hide modal</button>
-        </div>
-    </div>
+ <slot></slot>
 </teleport>
 </template>
 
