@@ -1,6 +1,6 @@
 <template>
 <teleport to="body">
-    <div class="modal-overlay" @click.self="hideModal">
+    <div v-if="modelValue" class="modal-overlay" @click.self="hideModal">
         <div class="text-dark modal-content bg-gradient rounded shadow m-4 p-4">
             <h2>{{ title }}</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, ea minus nesciunt sequi dignissimos beatae cumque debitis facilis iure atque ratione soluta impedit optio mollitia laudantium, accusamus fugit.</p>
@@ -12,14 +12,20 @@
 
 <script setup>
 const props = defineProps({
-    title: String,
-    default: "there is no title"
-  
+    modelValue: {
+        type: Boolean,
+        default: false
+    },
+    title: {
+        type: String,
+        default: "there is no title"
+    }
+
 });
-const emit = defineEmits(["hideModal"]);
+const emit = defineEmits(['update:modelValue']);
 
 const clickHandler = () => {
-  emit("hideModal");
+    emit('update:modelValue', false);
 }
 </script>
 
