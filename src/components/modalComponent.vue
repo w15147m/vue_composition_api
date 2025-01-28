@@ -4,7 +4,7 @@
         <div class="text-dark modal-content bg-gradient rounded shadow m-4 p-4">
             <h2>{{ title }}</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, ea minus nesciunt sequi dignissimos beatae cumque debitis facilis iure atque ratione soluta impedit optio mollitia laudantium, accusamus fugit.</p>
-            <button @click="hideModal" class="btn btn-primary mt-2">Hide modal</button>
+            <button @click="$emit('hideModal')" class="btn btn-primary mt-2">Hide modal</button>
         </div>
     </div>
 </teleport>
@@ -15,8 +15,8 @@ const props = defineProps({
     title: String,
     default: "there is no title"
   
-})
-
+});
+const emit = defineEmits(["hideModal"]);
 </script>
 
 <style>

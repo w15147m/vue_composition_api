@@ -3,7 +3,7 @@
     <h1 class="text-center mt-4">Modals</h1>
     <button @click="showModal" class="btn btn-primary mt-2">Show modal</button>
     <!-- Teleport the modal content to the body -->
-    <modalComponent v-if="isShow"  :title="title">
+    <modalComponent v-if="isShow"  :title="title" @hideModal="isShow = false">
       
     </modalComponent>
   </div>
