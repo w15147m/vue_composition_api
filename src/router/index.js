@@ -4,6 +4,7 @@ import textEditor from '@/views/textEditor.vue'
 import postsView from '@/views/posts/postsView.vue'
 import postDetails from '@/views/posts/postDetails.vue'
 import modalView from '@/views/posts/modalView.vue'
+import Composable from '@/views/Composable.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -37,6 +38,12 @@ const router = createRouter({
       path: '/textEditor',
       name: 'textEditor',
       component: textEditor,
+      
+    },
+    {
+      path: '/Composable',
+      name: 'Composable',
+      component: Composable,
       
     },
   ],

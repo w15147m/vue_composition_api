@@ -2,17 +2,19 @@
 import {
     RouterLink,
     RouterView
-} from 'vue-router'
+} from 'vue-router';
+
 </script>
 
 <template>
-  <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/posts">Posts</RouterLink>
-        <RouterLink to="/modal">modal</RouterLink>
-        <RouterLink to="/textEditor">Text Editor</RouterLink>
-    </nav>
+<nav>
+    <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/about">About</RouterLink>
+    <RouterLink to="/posts">Posts</RouterLink>
+    <RouterLink to="/modal">modal</RouterLink>
+    <RouterLink to="/textEditor">Text Editor</RouterLink>
+    <RouterLink to="/Composable">Composable</RouterLink>
+</nav>
 <RouterView />
 </template>
 
@@ -51,6 +53,4 @@ nav a {
 nav a:first-of-type {
     border: 0;
 }
-
-
 </style>
